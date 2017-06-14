@@ -1,0 +1,39 @@
+doctype html
+
+html(lang="en")
+head
+	title  forex price
+	link(rel='stylesheet'
+		 type='text/css'
+		 href='../css/index.css'
+		 media='screen')
+	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+
+body
+	table(class="rwd-table")
+		caption 参考实时报价
+		tr
+			th 货币对
+			th 买入价
+			th 卖出价
+		tr
+			td AUD/CHH
+			td #{Number(AUD.rates.CNY * 0.98).toFixed(2)}
+			td #{Number(AUD.rates.CNY * 1.02).toFixed(2)}
+		tr
+			td AUD/USD
+			td #{Number(AUD.rates.USD * 0.98).toFixed(2)}
+			td #{Number(AUD.rates.USD * 1.02).toFixed(2)}
+		tr
+			td AUD/NZD
+			td #{Number(AUD.rates.NZD * 0.98).toFixed(2)}
+			td #{Number(AUD.rates.NZD * 1.02).toFixed(2)}
+		tr
+			td AUD/CHF
+			td #{Number(AUD.rates.CHF * 0.98).toFixed(2)}
+			td #{Number(AUD.rates.CHF * 1.02).toFixed(2)}
+		tr
+			td USD/CNH
+			td #{Number(CNY.rates.CNY * 0.98).toFixed(2)}
+			td #{Number(CNY.rates.CNY * 1.02).toFixed(2)}
+	
