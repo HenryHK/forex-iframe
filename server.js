@@ -13,6 +13,6 @@ app.use(bodyParser.urlencoded());
 app.set('views', path.join(__dirname, "app", "views"));
 app.use("/", router);
 
-app.listen(3000, function() {
+app.listen(8080, function() {
     console.log("The app is running");
 });
