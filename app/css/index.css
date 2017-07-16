@@ -65,19 +65,19 @@ body {
     font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    color: #444;
+    color: #ffffff;
     background: #eee;
 }
 
 h1 {
     font-weight: normal;
     letter-spacing: -1px;
-    color: #34495E;
+    color: #ffffff;
 }
 
 .rwd-table {
-    background: #34495E;
-    color: #fff;
+    background: #ffffff;
+    color: black;
     border-bottom-right-radius: .4em;
     border-bottom-left-radius: .4em;
     overflow: hidden;
@@ -87,8 +87,8 @@ h1 {
 caption {
     font-size: x-large;
     font-weight: bold;
-    background: #34495E;
-    color: yellow;
+    background: #ffffff;
+    color: black;
     border-top-right-radius: .4em;
     border-top-left-radius: .4em;
     overflow: hidden;
@@ -96,7 +96,7 @@ caption {
 }
 
 .rwd-table tr {
-    border-color: #46637f;
+    border-color: #ffffff;
 }
 
 .rwd-table th,
@@ -114,7 +114,7 @@ caption {
 
 .rwd-table th,
 .rwd-table td:before {
-    color: #dd5;
+    color: black;
 }
 
 div {
