@@ -88,7 +88,7 @@ caption {
     font-size: x-large;
     font-weight: bold;
     background: #ffffff;
-    color: black;
+    color: transparent;
     border-top-right-radius: .4em;
     border-top-left-radius: .4em;
     overflow: hidden;
