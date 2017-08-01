@@ -1,13 +1,23 @@
 "use strict";
 
 var http = require('http');
+var https = require('https');
 
 module.exports.getForexPrice = function(req, res) {
     var AUD_url = "http://api.fixer.io/latest?symbols=CNY,USD,NZD,CHF&base=AUD";
     var CNY_url = "http://api.fixer.io/latest?symbols=CNY&base=USD";
 
-    var parsedAUDData;
-    var parsedCNYData;
+    var AUDCNH_url = "https://forex.1forge.com/1.0.2/quotes?pairs=AUDCNH&api_key=QfvLze2oE5R3qD5UGvkhEUg1mWwxellN";
+    var AUDUSD_url = "https://forex.1forge.com/1.0.2/quotes?pairs=AUDUSD&api_key=QfvLze2oE5R3qD5UGvkhEUg1mWwxellN";
+    var AUDNZD_url = "https://forex.1forge.com/1.0.2/quotes?pairs=AUDNZD&api_key=QfvLze2oE5R3qD5UGvkhEUg1mWwxellN";
+    var AUDCHF_url = "https://forex.1forge.com/1.0.2/quotes?pairs=AUDCHF&api_key=QfvLze2oE5R3qD5UGvkhEUg1mWwxellN";
+    var USDCNH_url = "https://forex.1forge.com/1.0.2/quotes?pairs=USDCNH&api_key=QfvLze2oE5R3qD5UGvkhEUg1mWwxellN";
+
+    var parsedAUDCNH;
+    var parsedAUDUSD;
+    var parsedAUDNZD;
+    var parsedAUDCHF;
+    var parsedUSDCNH;
 
     function CDL(countdown, completion) {
         this.signal = function() {
@@ -15,40 +25,78 @@ module.exports.getForexPrice = function(req, res) {
         };
     }
 
-    var latch = new CDL(2, function() {
-        console.log("latch.signal() was called 2 times.");
+    var latch = new CDL(5, function() {
+        console.log("latch.signal() was called 5 times.");
         console.log({
-            AUD: parsedAUDData,
-            CNY: parsedCNYData
+            AUDCNH: parsedAUDCNH,
+            AUDUSD: parsedAUDUSD,
+            AUDNZD: parsedAUDNZD,
+            AUDCHF: parsedAUDCHF,
+            USDCNH: parsedUSDCNH
         });
         res.render("index.pug", {
-            AUD: parsedAUDData,
-            CNY: parsedCNYData
+            AUDCNH: parsedAUDCNH,
+            AUDUSD: parsedAUDUSD,
+            AUDNZD: parsedAUDNZD,
+            AUDCHF: parsedAUDCHF,
+            USDCNH: parsedUSDCNH
         });
 
     });
 
-    http.get(AUD_url, function(res) {
+    https.get(AUDCNH_url, function(res) {
 
         var rawData = "";
 
         res.on('data', function(chunk) { rawData += chunk; });
         res.on('end', function() {
-            parsedAUDData = JSON.parse(rawData);
+            parsedAUDCNH = JSON.parse(rawData);
             latch.signal();
         });
     });
 
-    http.get(CNY_url, function(res) {
+    https.get(AUDUSD_url, function(res) {
 
         var rawData = "";
 
         res.on('data', function(chunk) { rawData += chunk; });
         res.on('end', function() {
-            parsedCNYData = JSON.parse(rawData);
+            parsedAUDUSD = JSON.parse(rawData);
             latch.signal();
         });
     });
 
+    https.get(AUDNZD_url, function(res) {
+
+        var rawData = "";
+
+        res.on('data', function(chunk) { rawData += chunk; });
+        res.on('end', function() {
+            parsedAUDNZD = JSON.parse(rawData);
+            latch.signal();
+        });
+    });
+
+    https.get(AUDCHF_url, function(res) {
+
+        var rawData = "";
+
+        res.on('data', function(chunk) { rawData += chunk; });
+        res.on('end', function() {
+            parsedAUDCHF = JSON.parse(rawData);
+            latch.signal();
+        });
+    });
+
+    https.get(USDCNH_url, function(res) {
+
+        var rawData = "";
+
+        res.on('data', function(chunk) { rawData += chunk; });
+        res.on('end', function() {
+            parsedUSDCNH = JSON.parse(rawData);
+            latch.signal();
+        });
+    });
 
 }

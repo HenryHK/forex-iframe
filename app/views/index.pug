@@ -15,32 +15,32 @@ div
 		caption Reference Quotation
 		tr
 			th Pair
-			th Bid
-			th Real Time
 			th Ask
+			th Real Time
+			th Bid
 		tr
-			td AUD/CHH
-			td #{Number(AUD.rates.CNY * 0.98).toFixed(2)}
-			td #{Number(AUD.rates.CNY).toFixed(2)}
-			td #{Number(AUD.rates.CNY * 1.02).toFixed(2)}
+			td AUD/CNH
+			td #{Number(AUDCNH[0].price * 1.008).toFixed(4)}
+			td #{Number(AUDCNH[0].price).toFixed(4)}
+			td #{Number(AUDCNH[0].price * 1.02).toFixed(4)}
 		tr
 			td AUD/USD
-			td #{Number(AUD.rates.USD * 0.98).toFixed(2)}
-			td #{Number(AUD.rates.USD).toFixed(2)}
-			td #{Number(AUD.rates.USD * 1.02).toFixed(2)}
+			td #{Number(AUDUSD[0].price * 1.008).toFixed(4)}
+			td #{Number(AUDUSD[0].price).toFixed(4)}
+			td #{Number(AUDUSD[0].price * 1.02).toFixed(4)}
 		tr
 			td AUD/NZD
-			td #{Number(AUD.rates.NZD * 0.98).toFixed(2)}
-			td #{Number(AUD.rates.NZD).toFixed(2)}
-			td #{Number(AUD.rates.NZD * 1.02).toFixed(2)}
+			td #{Number(AUDNZD[0].price * 1.008).toFixed(4)}
+			td #{Number(AUDNZD[0].price).toFixed(4)}
+			td #{Number(AUDNZD[0].price * 1.02).toFixed(4)}
 		tr
 			td AUD/CHF
-			td #{Number(AUD.rates.CHF * 0.98).toFixed(2)}
-			td #{Number(AUD.rates.CHF).toFixed(2)}
-			td #{Number(AUD.rates.CHF * 1.02).toFixed(2)}
+			td #{Number(AUDCHF[0].price * 1.008).toFixed(4)}
+			td #{Number(AUDCHF[0].price).toFixed(4)}
+			td #{Number(AUDCHF[0].price * 1.02).toFixed(4)}
 		tr
 			td USD/CNH
-			td #{Number(CNY.rates.CNY * 0.98).toFixed(2)}
-			td #{Number(CNY.rates.CNY).toFixed(2)}
-			td #{Number(CNY.rates.CNY * 1.02).toFixed(2)}
+			td #{Number(USDCNH[0].price * 1.008).toFixed(4)}
+			td #{Number(USDCNH[0].price).toFixed(4)}
+			td #{Number(USDCNH[0].price * 1.02).toFixed(4)}
 	
