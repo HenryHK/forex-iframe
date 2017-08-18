@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.set('views', path.join(__dirname, "app", "views"));
 app.use("/", router);
+app.use("/api", router);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
