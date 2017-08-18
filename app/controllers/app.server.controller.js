@@ -20,7 +20,8 @@ module.exports.getApi = function(req, res) {
             AUDCNH: parsedAUDCNH
         });
         res.json({
-            AUDCNH: (Number(parsedAUDCNH[0].price) * 1.025).toFixed(4)
+            Ask: (Number(parsedAUDCNH[0].price) * 1.008).toFixed(4),
+            Bid: (Number(parsedAUDCNH[0].price) * 1.025).toFixed(4)
         });
 
     });
