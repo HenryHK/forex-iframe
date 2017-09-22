@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+/* @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 .rwd-table {
     margin: 1em 0;
@@ -33,7 +33,7 @@
     display: inline-block;
 }
 
-@media (min-width: 480px) {
+@media (min-width:50px) {
     .rwd-table td:before {
         display: none;
     }
@@ -43,9 +43,13 @@
 .rwd-table td {
     text-align: center;
     white-space: nowrap;
+    width: 81px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 50px) {
     .rwd-table th,
     .rwd-table td {
         display: table-cell;
@@ -62,7 +66,6 @@
 }
 
 body {
-    font-size: x-large;
     padding: 0 2em;
     font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -83,7 +86,9 @@ h1 {
     border-bottom-right-radius: .4em;
     border-bottom-left-radius: .4em;
     overflow: hidden;
-    margin: auto
+    margin: auto;
+    table-layout: fixed;
+    white-space: nowrap;
 }
 
 caption {
@@ -107,10 +112,10 @@ caption {
     text-align: center;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 50px) {
     .rwd-table th,
     .rwd-table td {
-        padding: 1em !important;
+        padding: 0;
     }
 }
 
@@ -121,4 +126,12 @@ caption {
 
 div {
     text-align: center;
+}
+
+table {}
+
+td {} */
+
+td {
+    padding: .5em
 }
