@@ -132,6 +132,10 @@ table {}
 
 td {} */
 
+body {
+    font-size: large
+}
+
 td {
     padding: .5em
 }
